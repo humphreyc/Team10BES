@@ -1,0 +1,13 @@
+const WebSocket = require('ws');
+
+//const ws = new WebSocket('ws://[0000:fe80::06a3:16ff:fe5e:6b72]:1128', {family:6}, {localAddress:'[0000:fe80::8230:dcff:fef9:f2d7]'});
+const ws = new WebSocket('ws://[2001:db8::06a3:16ff:fe5e:6b72]:1128';
+console.log("Running");
+ws.on('open', function open() {
+  ws.send('something');
+  console.log("Sending something");
+});
+
+ws.on('message', function incoming(data) {
+  console.log(data);
+});
